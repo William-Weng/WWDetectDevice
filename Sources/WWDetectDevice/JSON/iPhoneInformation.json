@@ -1,0 +1,57 @@
+{
+  "320x480x2": {
+    "Size": {"3.5 in": ["iPhone 2G (2007)", "iPhone 3G (2008)", "iPhone 3GS (2009)", "iPhone 4 (2010)", "iPhone 4S (2011)"]},
+    "UIKit": {"width": 320, "height": 480, "scale": 2},
+    "Pixel": {"width": 640, "height": 960, "scale": 1}
+  },
+  "320x568x2": {
+    "Size": {"4.0 in": ["iPhone 5 (2012)", "iPhone 5S (2013)", "iPhone 5C (2013)", "iPhone 5 (2012)"]},
+    "UIKit": {"width": 320, "height": 568, "scale": 2},
+    "Pixel": {"width": 640, "height": 1136, "scale": 1}
+  },
+  "375x667x2": {
+    "Size": {"4.7 in": ["iPhone 8 (2017)", "iPhone 7 (2016)", "iPhone 6S (2015)", "iPhone 6+ (2014)", "iPhone 6 (2014)"]},
+    "UIKit": {"width": 375, "height": 667, "scale": 2},
+    "Pixel": {"width": 750, "height": 1334, "scale": 1}
+  },
+  "375x812x3": {
+    "Size": {"5.4 in": ["iPhone 13 Mini (2021)", "iPhone 12 Mini (2020)"], "5.8 in": ["iPhone 11 Pro (2019)", "iPhone XS (2018)", "iPhone X (2017)"]},
+    "UIKit": {"width": 375, "height": 812, "scale": 3},
+    "Pixel": {"width": 1125, "height": 2436, "scale": 1}
+  },
+  "390x844x3": {
+    "Size": {"6.06 in": ["iPhone 14 (2022)", "iPhone 13 (2021)", "iPhone 13 Pro (2021)"], "6.1 in": ["iPhone 12 Pro (2020)", "iPhone 12 (2020)"]},
+    "UIKit": {"width": 390, "height": 844, "scale": 3},
+    "Pixel": {"width": 1170, "height": 2532, "scale": 1}
+  },
+  "393x852x3": {
+    "Size": {"6.1 in": ["iPhone 14 Pro (2022)", "iPhone 15 (2023)", "iPhone 15 Pro (2023)"]},
+    "UIKit": {"width": 393, "height": 852, "scale": 3},
+    "Pixel": {"width": 1179, "height": 2556, "scale": 1}
+  },
+  "414x736x3": {
+    "Size": {"5.5 in": ["iPhone 8+ (2017)", "iPhone 7+ (2016)", "iPhone 6S+ (2015)"]},
+    "UIKit": {"width": 414, "height": 736, "scale": 3},
+    "Pixel": {"width": 1080, "height": 1920, "scale": 1}
+  },
+  "414x896x2": {
+    "Size": {"6.1 in": ["iPhone 11 (2019)", "iPhone XR (2018)"]},
+    "UIKit": {"width": 414, "height": 896, "scale": 2},
+    "Pixel": {"width": 828, "height": 1792, "scale": 1}
+  },
+  "414x896x3": {
+    "Size": {"6.5 in": ["iPhone 11 Pro Max (2019)", "iPhone XS Max (2018)"]},
+    "UIKit": {"width": 414, "height": 896, "scale": 3},
+    "Pixel": {"width": 1242, "height": 2688, "scale": 1}
+  },
+  "428x926x3": {
+    "Size": {"6.68 in": ["iPhone 14 Plus (2022)", "iPhone 13 Pro Max (2021)"], "6.7 in": ["iPhone 12 Pro Max (2020)"]},
+    "UIKit": {"width": 428, "height": 926, "scale": 3},
+    "Pixel": {"width": 1284, "height": 2778, "scale": 1}
+  },
+  "430x932x3": {
+    "Size": {"6.7 in": ["iPhone 14 Pro Max (2022)", "iPhone 15 Plus (2023)", "iPhone 15 Pro Max (2023)"]},
+    "UIKit": {"width": 430, "height": 932, "scale": 3},
+    "Pixel": {"width": 1290, "height": 2796, "scale": 1}
+  }
+}
