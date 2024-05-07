@@ -30,7 +30,6 @@ import UIKit
 import WWPrint
 import WWDetectDevice
 
-// MARK: - ViewController
 final class ViewController: UIViewController {
 
     private typealias Info = (type: DeviceType, identifier: String)
@@ -49,8 +48,6 @@ final class ViewController: UIViewController {
         wwPrint(info)
     }
     
-    /// 檢測裝置類型名稱
-    /// - Parameter sender: UIButton
     @IBAction func detectDevice(_ sender: UIButton) {
         
         guard let information = infos[safe: sender.tag] else { return }

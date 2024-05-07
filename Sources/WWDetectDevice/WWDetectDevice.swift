@@ -69,8 +69,8 @@ public extension WWDetectDevice {
     func deviceInformation(identifier: String) -> [String: Any] {
         
         guard let type = parseDeviceType(identifier: identifier) else { return [:] }
-        let info = deviceInformation(type: type, identifier: identifier)
         
+        let info = deviceInformation(type: type, identifier: identifier)
         return info
     }
     
