@@ -13,7 +13,7 @@ import WWDetectDevice
 final class ViewController: UIViewController {
 
     private typealias Info = (type: DeviceType, identifier: String)
-        
+    
     private let infos: [Info] = [
         (type: .AppleTV, identifier: "AppleTV6,2"),
         (type: .iPad, identifier: "iPad5,4"),

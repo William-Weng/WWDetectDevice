@@ -5,12 +5,12 @@
     "Pixel": {"width": 640, "height": 960, "scale": 1}
   },
   "320x568x2": {
-    "Size": {"4.0 in": ["iPhone 5 (2012)", "iPhone 5S (2013)", "iPhone 5C (2013)", "iPhone 5 (2012)"]},
+    "Size": {"4.0 in": ["iPhone SE (2016)", "iPhone 5 (2012)", "iPhone 5S (2013)", "iPhone 5C (2013)", "iPhone 5 (2012)"]},
     "UIKit": {"width": 320, "height": 568, "scale": 2},
     "Pixel": {"width": 640, "height": 1136, "scale": 1}
   },
   "375x667x2": {
-    "Size": {"4.7 in": ["iPhone 8 (2017)", "iPhone 7 (2016)", "iPhone 6S (2015)", "iPhone 6+ (2014)", "iPhone 6 (2014)"]},
+    "Size": {"4.7 in": ["iPhone SE 3 (2022)", "iPhone SE 2 (2020)", "iPhone 8 (2017)", "iPhone 7 (2016)", "iPhone 6S (2015)", "iPhone 6+ (2014)", "iPhone 6 (2014)"]},
     "UIKit": {"width": 375, "height": 667, "scale": 2},
     "Pixel": {"width": 750, "height": 1334, "scale": 1}
   },
