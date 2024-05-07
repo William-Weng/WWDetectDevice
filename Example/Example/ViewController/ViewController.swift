@@ -23,6 +23,9 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let info = WWDetectDevice.shared.deviceInformation(identifier: "iPad13,11")
+        wwPrint(info)
     }
     
     /// 檢測裝置類型名稱

@@ -11,7 +11,7 @@
 
 ```bash
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWDetectDevice.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/William-Weng/WWDetectDevice.git", .upToNextMajor(from: "1.1.0"))
 ]
 ```
 
@@ -21,6 +21,8 @@ dependencies: [
 |deviceModelObject(type:)|取得該裝置類型的全文件資料 (iPad / iPhone / AppleTV / AppleWatch)|
 |deviceModel(type:)|取得該裝置類型的全文件字典 (iPad / iPhone / AppleTV / AppleWatch)|
 |deviceInformation(type:identifier:)|取得該單一裝置類型的資訊 (iPad / iPhone / AppleTV / AppleWatch)|
+|deviceInformation(identifier:)|取得該單一裝置類型的資訊|
+|parseDeviceType(identifier:)|依照裝置Id去解析DeviceType|
 
 ### Example
 ```swift
@@ -28,6 +30,7 @@ import UIKit
 import WWPrint
 import WWDetectDevice
 
+// MARK: - ViewController
 final class ViewController: UIViewController {
 
     private typealias Info = (type: DeviceType, identifier: String)
@@ -41,8 +44,13 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let info = WWDetectDevice.shared.deviceInformation(identifier: "iPad13,11")
+        wwPrint(info)
     }
     
+    /// 檢測裝置類型名稱
+    /// - Parameter sender: UIButton
     @IBAction func detectDevice(_ sender: UIButton) {
         
         guard let information = infos[safe: sender.tag] else { return }

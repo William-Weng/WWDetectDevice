@@ -61,4 +61,29 @@ public extension WWDetectDevice {
         
         return info
     }
+    
+    /// 取得該單一裝置類型的資訊 (iPad / iPhone / AppleTV / AppleWatch)
+    /// - Parameters:
+    ///   - identifier: String
+    /// - Returns: [String: Any]
+    func deviceInformation(identifier: String) -> [String: Any] {
+        
+        guard let type = parseDeviceType(identifier: identifier) else { return [:] }
+        let info = deviceInformation(type: type, identifier: identifier)
+        
+        return info
+    }
+    
+    /// 依照裝置Id去解析DeviceType
+    /// - Parameter identifier: String
+    /// - Returns: DeviceTyp?
+    func parseDeviceType(identifier: String) -> DeviceType? {
+        
+        let type = DeviceType.allCases.first { type in
+            if (!identifier.hasPrefix(type.prefix())) { return false }
+            return true
+        }
+        
+        return type
+    }
 }

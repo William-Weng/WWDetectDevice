@@ -8,7 +8,7 @@
 import UIKit
 
 // MARK: - APPLE裝置分類
-public enum DeviceType {
+public enum DeviceType: CaseIterable {
     
     case iPhone
     case iPad
@@ -24,5 +24,17 @@ public enum DeviceType {
         case .AppleTV: return "/JSON/AppleTVModel.json"
         case .AppleWatch: return "/JSON/AppleWatchModel.json"
         }
+    }
+    
+    /// 類型前綴字
+    /// - Returns: String
+    func prefix() -> String {
+        switch self {
+        case .iPhone: return "iPhone"
+        case .iPad: return "iPad"
+        case .AppleTV: return "AppleTV"
+        case .AppleWatch: return "Watch"
+        }
+
     }
 }

@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWDetectDevice",
       "state" : {
-        "branch" : "main",
-        "revision" : "b4cfcf044dcbf77a50ccece386dfe7d34755c993"
+        "revision" : "800199645be0543b46b04a7e8f8428130888b70d",
+        "version" : "1.0.0"
       }
     },
     {
