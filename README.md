@@ -3,7 +3,7 @@
 
 ### [Introduction - 簡介](https://swiftpackageindex.com/William-Weng)
 - [Detect the device name and other related information from the device number.](https://www.theiphonewiki.com/wiki/Models)
-- [由裝置編號檢測該裝置的名稱等相關資訊。](https://github.com/William-Weng/Documents)
+- [由裝置編號檢測該裝置的名稱等相關資訊。](https://iosref.com/)
 
 ![](./Example.gif)
 
