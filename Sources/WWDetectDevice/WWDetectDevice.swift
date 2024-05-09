@@ -45,6 +45,41 @@ public extension WWDetectDevice {
         
         return dictionary
     }
+        
+    /// 取得該單一裝置類型的資訊 (iPad / iPhone / AppleTV / AppleWatch)
+    /// - Parameters:
+    ///   - identifier: String
+    /// - Returns: [String: Any]
+    func deviceInformation(identifier: String) -> [String: Any] {
+        
+        guard let type = parseDeviceType(identifier: identifier) else { return [:] }
+        
+        let info = deviceInformation(type: type, identifier: identifier)
+        return info
+    }
+        
+    /// 取得該裝置的內部編號 (實機才可以)
+    /// - Returns: String
+    func deviceIdentifier() -> String {
+        return UIDevice._identifier()
+    }
+}
+
+// MARK: - 小工具
+private extension WWDetectDevice {
+    
+    /// 依照裝置Id去解析DeviceType
+    /// - Parameter identifier: String
+    /// - Returns: DeviceTyp?
+    func parseDeviceType(identifier: String) -> DeviceType? {
+        
+        let type = DeviceType.allCases.first { type in
+            if (!identifier.hasPrefix(type.prefix())) { return false }
+            return true
+        }
+        
+        return type
+    }
     
     /// 取得該單一裝置類型的資訊 (iPad / iPhone / AppleTV / AppleWatch)
     /// - Parameters:
@@ -60,30 +95,5 @@ public extension WWDetectDevice {
         }
         
         return info
-    }
-    
-    /// 取得該單一裝置類型的資訊 (iPad / iPhone / AppleTV / AppleWatch)
-    /// - Parameters:
-    ///   - identifier: String
-    /// - Returns: [String: Any]
-    func deviceInformation(identifier: String) -> [String: Any] {
-        
-        guard let type = parseDeviceType(identifier: identifier) else { return [:] }
-        
-        let info = deviceInformation(type: type, identifier: identifier)
-        return info
-    }
-    
-    /// 依照裝置Id去解析DeviceType
-    /// - Parameter identifier: String
-    /// - Returns: DeviceTyp?
-    func parseDeviceType(identifier: String) -> DeviceType? {
-        
-        let type = DeviceType.allCases.first { type in
-            if (!identifier.hasPrefix(type.prefix())) { return false }
-            return true
-        }
-        
-        return type
     }
 }

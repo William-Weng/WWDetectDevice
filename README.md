@@ -20,9 +20,8 @@ dependencies: [
 |-|-|
 |deviceModelObject(type:)|取得該裝置類型的全文件資料 (iPad / iPhone / AppleTV / AppleWatch)|
 |deviceModel(type:)|取得該裝置類型的全文件字典 (iPad / iPhone / AppleTV / AppleWatch)|
-|deviceInformation(type:identifier:)|取得該單一裝置類型的資訊 (iPad / iPhone / AppleTV / AppleWatch)|
+|deviceIdentifier()|取得該裝置的內部編號 (實機才可以)|
 |deviceInformation(identifier:)|取得該單一裝置類型的資訊|
-|parseDeviceType(identifier:)|依照裝置Id去解析DeviceType|
 
 ### Example
 ```swift
@@ -30,29 +29,25 @@ import UIKit
 import WWPrint
 import WWDetectDevice
 
+// MARK: - ViewController
 final class ViewController: UIViewController {
 
     private typealias Info = (type: DeviceType, identifier: String)
-        
-    private let infos: [Info] = [
-        (type: .AppleTV, identifier: "AppleTV6,2"),
-        (type: .iPad, identifier: "iPad5,4"),
-        (type: .AppleWatch, identifier: "Watch6,9"),
-        (type: .iPhone, identifier: UIDevice._identifier()),
+    
+    private let identifiers: [String] = [
+        "AppleTV6,2",
+        "iPad5,4",
+        "Watch6,9",
+        WWDetectDevice.shared.deviceIdentifier(),
     ]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let info = WWDetectDevice.shared.deviceInformation(identifier: "iPad13,11")
-        wwPrint(info)
-    }
-    
+    /// 檢測裝置類型名稱
+    /// - Parameter sender: UIButton
     @IBAction func detectDevice(_ sender: UIButton) {
         
-        guard let information = infos[safe: sender.tag] else { return }
+        guard let identifier = identifiers[safe: sender.tag] else { return }
         
-        let info = WWDetectDevice.shared.deviceInformation(type: information.type, identifier: information.identifier)
+        let info = WWDetectDevice.shared.deviceInformation(identifier: identifier)
         sender.setTitle(info["name"] as? String, for: .normal)
     }
 }
