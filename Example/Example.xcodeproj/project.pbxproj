@@ -429,7 +429,7 @@
 			repositoryURL = "https://github.com/William-Weng/WWPrint";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.3.1;
 			};
 		};
 		81462BDF2BEC9AD600F24B0C /* XCRemoteSwiftPackageReference "WWDetectDevice" */ = {

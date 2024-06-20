@@ -12,7 +12,7 @@ let package = Package(
         .library(name: "WWDetectDevice", targets: ["WWDetectDevice"]),
     ],
     targets: [
-        .target(name: "WWDetectDevice", resources: [.copy("JSON")]),
+        .target(name: "WWDetectDevice", resources: [.copy("JSON"), .copy("Privacy")]),
     ],
     swiftLanguageVersions: [
         .v5
