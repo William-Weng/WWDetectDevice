@@ -50,5 +50,9 @@
   "iPhone15,4": {"name": "iPhone 15", "numbers": ["A2856", "A3089", "A3090", "A3092"], "storages": ["128GB", "256GB", "512GB"]},
   "iPhone15,5": {"name": "iPhone 15 Plus", "numbers": ["A2847", "A3093", "A3094", "A3096"], "storages": ["128GB", "256GB", "512GB"]},
   "iPhone16,1": {"name": "iPhone 15 Pro", "numbers": ["A2848", "A3101", "A3102", "A3104"], "storages": ["128GB", "256GB", "512GB", "1TB"]},
-  "iPhone16,2": {"name": "iPhone 15 Pro Max", "numbers": ["A2849", "A3105", "A3106", "A3108"], "storages": ["128GB", "256GB", "512GB", "1TB"]}
+  "iPhone16,2": {"name": "iPhone 15 Pro Max", "numbers": ["A2849", "A3105", "A3106", "A3108"], "storages": ["128GB", "256GB", "512GB", "1TB"]},
+  "iPhone17,1": {"name": "iPhone 16 Pro", "numbers": [], "storages": []},
+  "iPhone17,2": {"name": "iPhone 16 Pro Max", "numbers": [], "storages": []},
+  "iPhone17,3": {"name": "iPhone 16", "numbers": [], "storages": []},
+  "iPhone17,4": {"name": "iPhone 16 Plus", "numbers": [], "storages": []}
 }
