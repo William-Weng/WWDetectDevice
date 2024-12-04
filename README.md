@@ -5,23 +5,24 @@
 - [Detect the device name and other related information from the device number.](https://www.theiphonewiki.com/wiki/Models)
 - [由裝置編號檢測該裝置的名稱等相關資訊。](https://iosref.com/)
 
-![](./Example.gif)
+![](./Example.webp)
 
 ### [Installation with Swift Package Manager](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/使用-spm-安裝第三方套件-xcode-11-新功能-2c4ffcf85b4b)
 
 ```bash
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWDetectDevice.git", .upToNextMajor(from: "1.1.0"))
+    .package(url: "https://github.com/William-Weng/WWDetectDevice.git", .upToNextMajor(from: "1.2.0"))
 ]
 ```
 
 ### Function - 可用函式
-|函式|功能|
+|[函式](https://everymac.com/ultimate-mac-lookup/?search_keywords=iPhone16,1)|[功能](https://useyourloaf.com/blog/iphone-16-screen-sizes/)|
 |-|-|
 |deviceModelObject(type:)|取得該裝置類型的全文件資料 (iPad / iPhone / AppleTV / AppleWatch)|
 |deviceModel(type:)|取得該裝置類型的全文件字典 (iPad / iPhone / AppleTV / AppleWatch)|
 |deviceIdentifier()|取得該裝置的內部編號 (實機才可以)|
 |deviceInformation(identifier:)|取得該單一裝置類型的資訊|
+|deviceSystemInformation()|取得系統的相關資訊|
 
 ### Example
 ```swift
@@ -41,14 +42,17 @@ final class ViewController: UIViewController {
         WWDetectDevice.shared.deviceIdentifier(),
     ]
     
-    /// 檢測裝置類型名稱
-    /// - Parameter sender: UIButton
     @IBAction func detectDevice(_ sender: UIButton) {
         
         guard let identifier = identifiers[safe: sender.tag] else { return }
         
         let info = WWDetectDevice.shared.deviceInformation(identifier: identifier)
         sender.setTitle(info["name"] as? String, for: .normal)
+    }
+    
+    @IBAction func detectOS(_ sender: UIButton) {
+        let os = "\(WWDetectDevice.shared.deviceSystemInformation().name) \(WWDetectDevice.shared.deviceSystemInformation().version)"
+        sender.setTitle(os, for: .normal)
     }
 }
 ```

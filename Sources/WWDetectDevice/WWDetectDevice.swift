@@ -21,7 +21,7 @@ public extension WWDetectDevice {
     /// 取得該裝置類型的全文件資料 (iPad / iPhone / AppleTV / AppleWatch)
     /// - Parameter type: DeviceType
     /// - Returns: Any?
-    func deviceModelObject(type: DeviceType) -> Any? {
+    func deviceModelObject(type: Constant.DeviceType) -> Any? {
         
         guard let jsonString = Bundle.module._readText(resource: type.resource()),
               let jsonObject = jsonString._jsonObject()
@@ -35,7 +35,7 @@ public extension WWDetectDevice {
     /// 取得該裝置類型的全文件字典 (iPad / iPhone / AppleTV / AppleWatch)
     /// - Parameter type: DeviceType
     /// - Returns: [String: Any]
-    func deviceModel(type: DeviceType) -> [String: Any] {
+    func deviceModel(type: Constant.DeviceType) -> [String: Any] {
         
         guard let object = deviceModelObject(type: type),
               let dictionary = object as? [String: Any]
@@ -63,6 +63,12 @@ public extension WWDetectDevice {
     func deviceIdentifier() -> String {
         return UIDevice._identifier()
     }
+    
+    /// 取得系統的相關資訊
+    /// - Returns: Constant.SystemInformation
+    func deviceSystemInformation() -> Constant.SystemInformation {
+        return UIDevice._systemInformation()
+    }
 }
 
 // MARK: - 小工具
@@ -71,9 +77,9 @@ private extension WWDetectDevice {
     /// 依照裝置Id去解析DeviceType
     /// - Parameter identifier: String
     /// - Returns: DeviceTyp?
-    func parseDeviceType(identifier: String) -> DeviceType? {
+    func parseDeviceType(identifier: String) -> Constant.DeviceType? {
         
-        let type = DeviceType.allCases.first { type in
+        let type = Constant.DeviceType.allCases.first { type in
             if (!identifier.hasPrefix(type.prefix())) { return false }
             return true
         }
@@ -86,7 +92,7 @@ private extension WWDetectDevice {
     ///   - type: DeviceType
     ///   - identifier: String
     /// - Returns: [String: Any]
-    func deviceInformation(type: DeviceType, identifier: String) -> [String: Any] {
+    func deviceInformation(type: Constant.DeviceType, identifier: String) -> [String: Any] {
         
         guard let model = Optional.some(deviceModel(type: type)),
               let info = model[identifier] as? [String: Any]
