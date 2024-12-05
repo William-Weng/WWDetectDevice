@@ -10,6 +10,8 @@ import UIKit
 // MARK: - 檢測裝置類型
 open class WWDetectDevice {
     
+    public class Constant: NSObject {}
+    
     public static let shared = WWDetectDevice()
     
     private init() {}
@@ -21,7 +23,7 @@ public extension WWDetectDevice {
     /// 取得該裝置類型的全文件資料 (iPad / iPhone / AppleTV / AppleWatch)
     /// - Parameter type: DeviceType
     /// - Returns: Any?
-    func deviceModelObject(type: Constant.DeviceType) -> Any? {
+    func deviceModelObject(type: WWDetectDevice.Constant.DeviceType) -> Any? {
         
         guard let jsonString = Bundle.module._readText(resource: type.resource()),
               let jsonObject = jsonString._jsonObject()
@@ -35,7 +37,7 @@ public extension WWDetectDevice {
     /// 取得該裝置類型的全文件字典 (iPad / iPhone / AppleTV / AppleWatch)
     /// - Parameter type: DeviceType
     /// - Returns: [String: Any]
-    func deviceModel(type: Constant.DeviceType) -> [String: Any] {
+    func deviceModel(type: WWDetectDevice.Constant.DeviceType) -> [String: Any] {
         
         guard let object = deviceModelObject(type: type),
               let dictionary = object as? [String: Any]
@@ -66,7 +68,7 @@ public extension WWDetectDevice {
     
     /// 取得系統的相關資訊
     /// - Returns: Constant.SystemInformation
-    func deviceSystemInformation() -> Constant.SystemInformation {
+    func deviceSystemInformation() -> WWDetectDevice.Constant.SystemInformation {
         return UIDevice._systemInformation()
     }
 }
@@ -77,9 +79,9 @@ private extension WWDetectDevice {
     /// 依照裝置Id去解析DeviceType
     /// - Parameter identifier: String
     /// - Returns: DeviceTyp?
-    func parseDeviceType(identifier: String) -> Constant.DeviceType? {
+    func parseDeviceType(identifier: String) -> WWDetectDevice.Constant.DeviceType? {
         
-        let type = Constant.DeviceType.allCases.first { type in
+        let type = WWDetectDevice.Constant.DeviceType.allCases.first { type in
             if (!identifier.hasPrefix(type.prefix())) { return false }
             return true
         }
@@ -92,7 +94,7 @@ private extension WWDetectDevice {
     ///   - type: DeviceType
     ///   - identifier: String
     /// - Returns: [String: Any]
-    func deviceInformation(type: Constant.DeviceType, identifier: String) -> [String: Any] {
+    func deviceInformation(type: WWDetectDevice.Constant.DeviceType, identifier: String) -> [String: Any] {
         
         guard let model = Optional.some(deviceModel(type: type)),
               let info = model[identifier] as? [String: Any]

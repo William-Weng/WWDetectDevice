@@ -11,7 +11,7 @@
 
 ```bash
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWDetectDevice.git", .upToNextMajor(from: "1.2.0"))
+    .package(url: "https://github.com/William-Weng/WWDetectDevice.git", .upToNextMajor(from: "1.3.0"))
 ]
 ```
 
@@ -30,10 +30,9 @@ import UIKit
 import WWPrint
 import WWDetectDevice
 
-// MARK: - ViewController
 final class ViewController: UIViewController {
 
-    private typealias Info = (type: DeviceType, identifier: String)
+    private typealias Info = (type: WWDetectDevice.Constant.DeviceType, identifier: String)
     
     private let identifiers: [String] = [
         "AppleTV6,2",
@@ -44,15 +43,42 @@ final class ViewController: UIViewController {
     
     @IBAction func detectDevice(_ sender: UIButton) {
         
-        guard let identifier = identifiers[safe: sender.tag] else { return }
+        guard let identifier = identifiers[safe: sender.tag],
+              let name = WWDetectDevice.shared.deviceInformation(identifier: identifier)["name"] as? String
+        else {
+            return
+        }
         
-        let info = WWDetectDevice.shared.deviceInformation(identifier: identifier)
-        sender.setTitle(info["name"] as? String, for: .normal)
+        sender.setTitle(name, for: .normal)
+        printType(identifier: identifier)
     }
     
     @IBAction func detectOS(_ sender: UIButton) {
         let os = "\(WWDetectDevice.shared.deviceSystemInformation().name) \(WWDetectDevice.shared.deviceSystemInformation().version)"
         sender.setTitle(os, for: .normal)
+    }
+    
+    private func printType(identifier: String) {
+        
+        if identifier.contains("iPhone") {
+            let type = WWDetectDevice.Constant.iPhoneType.find(with: identifier)
+            wwPrint(type); return
+        }
+                
+        if identifier.contains("iPad") {
+            let type = WWDetectDevice.Constant.iPadType.find(with: identifier)
+            wwPrint(type); return
+        }
+        
+        if identifier.contains("Watch") {
+            let type = WWDetectDevice.Constant.AppleWatchType.find(with: identifier)
+            wwPrint(type); return
+        }
+        
+        if identifier.contains("AppleTV") {
+            let type = WWDetectDevice.Constant.AppleTVType.find(with: identifier)
+            wwPrint(type); return
+        }
     }
 }
 ```
