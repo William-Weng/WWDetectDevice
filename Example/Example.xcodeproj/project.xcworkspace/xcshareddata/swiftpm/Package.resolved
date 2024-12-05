@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "wwdetectdevice",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWDetectDevice",
+      "state" : {
+        "revision" : "1ee0f9b6492e2da272bb2967b02b5723c83d7e76",
+        "version" : "1.2.3"
+      }
+    },
+    {
       "identity" : "wwprint",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWPrint",
