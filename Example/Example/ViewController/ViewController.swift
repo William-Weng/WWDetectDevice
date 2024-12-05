@@ -47,24 +47,13 @@ final class ViewController: UIViewController {
     ///   - identifier: 裝置編號
     private func printType(identifier: String) {
         
-        if identifier.contains("iPhone") {
-            let type = WWDetectDevice.Constant.iPhoneType.find(with: identifier)
-            wwPrint(type); return
-        }
+        guard let type = WWDetectDevice.Constant.DeviceType.find(with: identifier) else { return }
         
-        if identifier.contains("iPad") {
-            let type = WWDetectDevice.Constant.iPadType.find(with: identifier)
-            wwPrint(type); return
-        }
-        
-        if identifier.contains("Watch") {
-            let type = WWDetectDevice.Constant.AppleWatchType.find(with: identifier)
-            wwPrint(type); return
-        }
-        
-        if identifier.contains("AppleTV") {
-            let type = WWDetectDevice.Constant.AppleTVType.find(with: identifier)
-            wwPrint(type); return
+        switch type {
+        case .iPhone: let type = WWDetectDevice.Constant.iPhoneType.find(with: identifier); wwPrint(type)
+        case .iPad: let type = WWDetectDevice.Constant.iPadType.find(with: identifier); wwPrint(type)
+        case .AppleWatch: let type = WWDetectDevice.Constant.AppleWatchType.find(with: identifier); wwPrint(type)
+        case .AppleTV: let type = WWDetectDevice.Constant.AppleTVType.find(with: identifier); wwPrint(type)
         }
     }
 }

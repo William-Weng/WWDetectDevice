@@ -23,6 +23,18 @@ public extension WWDetectDevice.Constant {
         case AppleTV
         case AppleWatch
         
+        /// 根據裝置Id找尋分類
+        /// - Parameter identifier: 裝置Id
+        /// - Returns: DeviceType?
+        public static func find(with identifier: String) -> DeviceType? {
+            
+            for type in DeviceType.allCases {
+                if (identifier.contains(type.prefix())) { return type }
+            }
+            
+            return nil
+        }
+        
         /// 對應的文件名稱
         /// - Returns: String
         func resource() -> String {
