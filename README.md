@@ -11,7 +11,7 @@
 
 ```bash
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWDetectDevice.git", .upToNextMajor(from: "1.2.3"))
+    .package(url: "https://github.com/William-Weng/WWDetectDevice.git", .upToNextMajor(from: "1.3.0"))
 ]
 ```
 
@@ -22,17 +22,18 @@ dependencies: [
 |deviceModel(type:)|取得該裝置類型的全文件字典 (iPad / iPhone / AppleTV / AppleWatch)|
 |deviceIdentifier()|取得該裝置的內部編號 (實機才可以)|
 |deviceInformation(identifier:)|取得該單一裝置類型的資訊|
+|deviceType(identifier:)|依照裝置Id去解析DeviceType|
+|deviceEnum(identifier:)|依照裝置Id去找出Enum|
 |deviceSystemInformation()|取得系統的相關資訊|
 
 ### Example
 ```swift
 import UIKit
-import WWPrint
 import WWDetectDevice
 
 final class ViewController: UIViewController {
 
-    private typealias Info = (type: WWDetectDevice.Constant.DeviceType, identifier: String)
+    private typealias Info = (type: WWDetectDevice.DeviceType, identifier: String)
     
     private let identifiers: [String] = [
         "AppleTV6,2",
@@ -44,30 +45,19 @@ final class ViewController: UIViewController {
     @IBAction func detectDevice(_ sender: UIButton) {
         
         guard let identifier = identifiers[safe: sender.tag],
+              let deviceEnum = WWDetectDevice.shared.deviceEnum(identifier: identifier),
               let name = WWDetectDevice.shared.deviceInformation(identifier: identifier)["name"] as? String
         else {
             return
         }
         
         sender.setTitle(name, for: .normal)
-        printType(identifier: identifier)
+        print(deviceEnum)
     }
     
     @IBAction func detectOS(_ sender: UIButton) {
         let os = "\(WWDetectDevice.shared.deviceSystemInformation().name) \(WWDetectDevice.shared.deviceSystemInformation().version)"
         sender.setTitle(os, for: .normal)
-    }
-    
-    private func printType(identifier: String) {
-        
-        guard let type = WWDetectDevice.Constant.DeviceType.find(with: identifier) else { return }
-        
-        switch type {
-        case .iPhone: let type = WWDetectDevice.Constant.iPhoneType.find(with: identifier); wwPrint(type)
-        case .iPad: let type = WWDetectDevice.Constant.iPadType.find(with: identifier); wwPrint(type)
-        case .AppleWatch: let type = WWDetectDevice.Constant.AppleWatchType.find(with: identifier); wwPrint(type)
-        case .AppleTV: let type = WWDetectDevice.Constant.AppleTVType.find(with: identifier); wwPrint(type)
-        }
     }
 }
 ```

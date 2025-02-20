@@ -8,12 +8,12 @@
 import UIKit
 
 // MARK: - typealias
-public extension WWDetectDevice.Constant {
+public extension WWDetectDevice {
     typealias SystemInformation = (name: String, version: String, model: String, idiom: UIUserInterfaceIdiom)   // 系統資訊 => (iOS, 12.1, iPhone, 0)
 }
 
 // MARK: - enum
-public extension WWDetectDevice.Constant {
+public extension WWDetectDevice {
     
     // MARK: - APPLE裝置分類
     public enum DeviceType: CaseIterable {
@@ -28,8 +28,8 @@ public extension WWDetectDevice.Constant {
         /// - Returns: DeviceType?
         public static func find(with identifier: String) -> DeviceType? {
             
-            for type in DeviceType.allCases {
-                if (identifier.contains(type.prefix())) { return type }
+            for deviceType in DeviceType.allCases {
+                if (identifier.contains(deviceType.prefix())) { return deviceType }
             }
             
             return nil
@@ -57,9 +57,9 @@ public extension WWDetectDevice.Constant {
             }
         }
     }
-        
+    
     // MARK: - iPhone在販售時的名字
-    enum iPhoneType: CaseIterable {
+    enum iPhoneType: DeviceEnum, CaseIterable {
         
         case iPhone
         case iPhone_3G
@@ -177,7 +177,7 @@ public extension WWDetectDevice.Constant {
     }
     
     // MARK: - iPad在販售時的名字
-    enum iPadType: CaseIterable {
+    enum iPadType: DeviceEnum, CaseIterable {
         
         case iPad
         case iPad_2
@@ -310,7 +310,7 @@ public extension WWDetectDevice.Constant {
     }
     
     // MARK: - AppleWatch在販售時的名字
-    enum AppleWatchType: CaseIterable {
+    enum AppleWatchType: DeviceEnum, CaseIterable {
         
         case Apple_Watch
         case Apple_Watch_Series
@@ -389,7 +389,7 @@ public extension WWDetectDevice.Constant {
     }
     
     // MARK: - AppleTV在販售時的名字
-    enum AppleTVType: CaseIterable {
+    enum AppleTVType: DeviceEnum, CaseIterable {
         
         case AppleTV_1st
         case AppleTV_2nd
