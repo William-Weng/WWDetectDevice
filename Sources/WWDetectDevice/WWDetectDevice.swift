@@ -91,7 +91,7 @@ public extension WWDetectDevice {
     }
     
     /// 取得系統的相關資訊
-    /// - Returns: Constant.SystemInformation
+    /// - Returns: SystemInformation
     func deviceSystemInformation() -> SystemInformation {
         return UIDevice._systemInformation()
     }

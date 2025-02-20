@@ -104,7 +104,7 @@ extension UIDevice {
     }
     
     /// [取得系統的相關資訊](https://mini.nidbox.com/diary/read/9759417) => (name: "iOS", version: "14.6", model: "iPhone", idiom: 0)
-    /// - Returns: [Constant.SystemInformation](https://mini.nidbox.com/diary/read/9759417)
+    /// - Returns: [WWDetectDevice.SystemInformation](https://mini.nidbox.com/diary/read/9759417)
     static func _systemInformation() -> WWDetectDevice.SystemInformation {
         let info: WWDetectDevice.SystemInformation = (name: UIDevice.current.systemName, version: UIDevice.current.systemVersion, model: UIDevice.current.model, idiom: UIDevice.current.userInterfaceIdiom)
         return info
