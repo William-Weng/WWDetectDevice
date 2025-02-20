@@ -59,7 +59,7 @@
     "UIKit": { "width": 430, "height": 932, "scale": 3 },
     "Pixel": { "width": 1290, "height": 2796, "scale": 1 }
   },
-  "440x956": {
+  "440x956x3": {
     "Size": { "6.9 in": ["iPhone 16 Pro Max (2024)"] },
     "UIKit": { "width": 440, "height": 956, "scale": 3 },
     "Pixel": { "width": 1320, "height": 2868, "scale": 1 }
