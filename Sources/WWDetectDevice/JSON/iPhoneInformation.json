@@ -20,7 +20,7 @@
     "Pixel": { "width": 1125, "height": 2436, "scale": 1 }
   },
   "390x844x3": {
-    "Size": { "6.06 in": ["iPhone 14 (2022)", "iPhone 13 (2021)", "iPhone 13 Pro (2021)"], "6.1 in": ["iPhone 12 Pro (2020)", "iPhone 12 (2020)"] },
+    "Size": { "6.06 in": ["iPhone 16e (2025)", "iPhone 14 (2022)", "iPhone 13 (2021)", "iPhone 13 Pro (2021)"], "6.1 in": ["iPhone 12 Pro (2020)", "iPhone 12 (2020)"] },
     "UIKit": { "width": 390, "height": 844, "scale": 3 },
     "Pixel": { "width": 1170, "height": 2532, "scale": 1 }
   },
