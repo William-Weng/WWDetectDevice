@@ -1,4 +1,5 @@
 {
+  "originHash" : "588fdfd2ce5367c71d0e563295a9030eca801b32502e57dfdae0c39430b41c04",
   "pins" : [
     {
       "identity" : "wwdetectdevice",
@@ -10,5 +11,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

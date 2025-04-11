@@ -55,5 +55,5 @@
   "iPhone17,2": { "name": "iPhone 16 Pro Max", "numbers": ["A3084", "A3295", "A3296", "A3297"], "storages": ["128GB", "256GB", "512GB", "1TB"], "camera": { "front": 1, "back": 3 }},
   "iPhone17,3": { "name": "iPhone 16", "numbers": ["A3081", "A3286", "A3287", "A3288"], "storages": ["128GB", "256GB", "512GB"], "camera": { "front": 1, "back": 2 }},
   "iPhone17,4": { "name": "iPhone 16 Plus", "numbers": ["A3082", "A3289", "A3290", "A3291"], "storages": ["128GB", "256GB", "512GB"], "camera": { "front": 1, "back": 2 }},
-  "iPhone17,5": { "name": "iPhone 16e", "numbers": [""], "storages": ["128GB", "256GB", "512GB"], "camera": { "front": 1, "back": 1 }}
+  "iPhone17,5": { "name": "iPhone 16e", "numbers": ["A3212", "A3408", "A3409", "A3410"], "storages": ["128GB", "256GB", "512GB"], "camera": { "front": 1, "back": 1 }}
 }
