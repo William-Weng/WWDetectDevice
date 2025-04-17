@@ -88,7 +88,6 @@
   "iPad15,6": { "name": "iPad Air (13-inch) (7th generation)", "numbers": ["A3269", "A3271"], "storages": ["128GB", "256GB", "512GB", "1TB"] },
   "iPad15,7": { "name": "iPad (11th generation)", "numbers": ["A3354"], "storages": ["128GB", "256GB", "512GB"] },
   "iPad15,8": { "name": "iPad (11th generation)", "numbers": ["A3355", "A3356"], "storages": ["128GB", "256GB", "512GB"] },
-  "iPad15,8": { "name": "iPad (11th generation)", "numbers": ["A3355", "A3356"], "storages": ["128GB", "256GB", "512GB"] },
   "iPad16,1": { "name": "iPad mini (7th generation)", "numbers": ["A2993"], "storages": ["128GB", "256GB", "512GB"] },
   "iPad16,2": { "name": "iPad mini (7th generation)", "numbers": ["A2995", "A2996"], "storages": ["128GB", "256GB", "512GB"] },
   "iPad16,3": { "name": "iPad Pro (11-inch) (5th generation)", "numbers": ["A2759"], "storages": ["256GB", "512GB", "1TB", "2TB"] },

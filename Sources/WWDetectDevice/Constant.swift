@@ -215,6 +215,12 @@ public extension WWDetectDevice {
         case iPad_Pro_11_inch_4rd
         case iPad_Pro_12_9_inch_6th
         case iPad_Air_13_inch_6th
+        case iPad_Air_11_inch_7th
+        case iPad_Air_13_inch_7th
+        case iPad_11th
+        case iPad_mini_7th
+        case iPad_Pro_11_inch_5rd
+        case iPad_Pro_13_inch_7th
         
         /// 使用內建Id去取得該平板的名稱 ("iPad11,3" => .iPad_Air_3rd)
         /// - Parameter identifier: String
@@ -305,6 +311,18 @@ public extension WWDetectDevice {
                 "iPad14,6": .iPad_Pro_12_9_inch_6th,
                 "iPad14,10": .iPad_Air_13_inch_6th,
                 "iPad14,11": .iPad_Air_13_inch_6th,
+                "iPad15,3": .iPad_Air_11_inch_7th,
+                "iPad15,4": .iPad_Air_11_inch_7th,
+                "iPad15,5": .iPad_Air_13_inch_7th,
+                "iPad15,6": .iPad_Air_13_inch_7th,
+                "iPad15,7": .iPad_11th,
+                "iPad15,8": .iPad_11th,
+                "iPad16,1": .iPad_mini_7th,
+                "iPad16,2": .iPad_mini_7th,
+                "iPad16,3": .iPad_Pro_11_inch_5rd,
+                "iPad16,4": .iPad_Pro_11_inch_5rd,
+                "iPad16,5": .iPad_Pro_13_inch_7th,
+                "iPad16,6": .iPad_Pro_13_inch_7th,
             ]
             
             return models[identifier]
