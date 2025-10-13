@@ -108,6 +108,10 @@ public extension WWDetectDevice {
         case iPhone_16
         case iPhone_16_Plus
         case iPhone_16e
+        case iPhone_17_Pro
+        case iPhone_17_Pro_Max
+        case iPhone_17
+        case iPhone_Air
 
         /// 使用內建Id去取得該手機的名稱 ("iPhone14,5" => .iPhone_13)
         /// - Parameter identifier: String
@@ -172,6 +176,10 @@ public extension WWDetectDevice {
                 "iPhone17,3": .iPhone_16,
                 "iPhone17,4": .iPhone_16_Plus,
                 "iPhone17,5": .iPhone_16e,
+                "iPhone18,1": .iPhone_17_Pro,
+                "iPhone18,2": .iPhone_17_Pro_Max,
+                "iPhone18,3": .iPhone_17,
+                "iPhone18,4": .iPhone_Air,
             ]
             
             return models[identifier]
