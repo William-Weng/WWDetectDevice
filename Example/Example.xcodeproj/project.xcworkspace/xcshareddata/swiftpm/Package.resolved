@@ -1,0 +1,15 @@
+{
+  "originHash" : "588fdfd2ce5367c71d0e563295a9030eca801b32502e57dfdae0c39430b41c04",
+  "pins" : [
+    {
+      "identity" : "wwdetectdevice",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWDetectDevice",
+      "state" : {
+        "revision" : "59bc09a4960077d14d42aeac4058c81ce6fe001a",
+        "version" : "1.4.0"
+      }
+    }
+  ],
+  "version" : 3
+}

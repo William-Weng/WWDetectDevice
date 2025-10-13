@@ -5,6 +5,8 @@
 - [Detect the device name and other related information from the device number.](https://www.theiphonewiki.com/wiki/Models)
 - [由裝置編號檢測該裝置的名稱等相關資訊。](https://iosref.com/)
 
+https://github.com/user-attachments/assets/b445b8e9-6d01-4c0c-949a-dce7f18f61ea
+
 ### [Installation with Swift Package Manager](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/使用-spm-安裝第三方套件-xcode-11-新功能-2c4ffcf85b4b)
 
 ```bash
