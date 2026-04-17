@@ -11,17 +11,18 @@ https://github.com/user-attachments/assets/b445b8e9-6d01-4c0c-949a-dce7f18f61ea
 
 ```bash
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWDetectDevice.git", .upToNextMajor(from: "1.4.0"))
+    .package(url: "https://github.com/William-Weng/WWDetectDevice.git", .upToNextMajor(from: "1.4.1"))
 ]
 ```
 
 ### Function - 可用函式
 |[函式](https://everymac.com/ultimate-mac-lookup/?search_keywords=iPhone16,1)|[功能](https://useyourloaf.com/blog/iphone-16-screen-sizes/)|
 |-|-|
-|deviceModelObject(type:)|取得該裝置類型的全文件資料 (iPad / iPhone / AppleTV / AppleWatch)|
+|deviceModelObject(type:)|取得該裝置類型的[全文件](https://github.com/kylebshr/ScreenCorners)資料 (iPad / iPhone / AppleTV / AppleWatch)|
 |deviceModel(type:)|取得該裝置類型的全文件字典 (iPad / iPhone / AppleTV / AppleWatch)|
 |deviceIdentifier()|取得該裝置的內部編號 (實機才可以)|
 |deviceInformation(identifier:)|取得該單一裝置類型的資訊|
+|deviceCornerRadius(identifier:)|取得該單一裝置圓角半徑|
 |deviceType(identifier:)|依照裝置Id去解析DeviceType|
 |deviceEnum(identifier:)|依照裝置Id去找出Enum|
 |deviceSystemInformation()|取得系統的相關資訊|

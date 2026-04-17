@@ -1,4 +1,4 @@
-# 一些通用的文件備份
+# [一些通用的文件備份](https://github.com/kylebshr/ScreenCorners)
 
 ## [APPLE設備](https://www.ios-resolution.com/)
 |名稱|內容|

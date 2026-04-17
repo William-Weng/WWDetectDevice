@@ -10,7 +10,7 @@ import WWDetectDevice
 
 // MARK: - ViewController
 final class ViewController: UIViewController {
-
+    
     private typealias Info = (type: WWDetectDevice.DeviceType, identifier: String)
     
     private let identifiers: [String] = [

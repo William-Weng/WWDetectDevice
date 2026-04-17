@@ -8,14 +8,15 @@
 import UIKit
 
 // MARK: - 檢測裝置類型
-open class WWDetectDevice {
-        
+public actor WWDetectDevice {
+    
     public static let shared = WWDetectDevice()
     
     private init() {}
 }
 
 // MARK: - 公開函式
+@MainActor
 public extension WWDetectDevice {
     
     /// 取得該裝置類型的全文件資料 (iPad / iPhone / AppleTV / AppleWatch)
@@ -58,19 +59,37 @@ public extension WWDetectDevice {
         return info
     }
     
+    /// [取得該單一裝置圓角半徑](https://github.com/kylebshr/ScreenCorners)
+    /// - Parameters:
+    ///   - identifier: String
+    /// - Returns: CGFloat?
+    func deviceCornerRadius(identifier: String) -> CGFloat? {
+        
+        // let cornerRadius = UIScreen.main.value(forKey: "displayCornerRadius") as? CGFloat ?? 0.0
+        let info = deviceInformation(identifier: identifier)
+        
+        guard !info.isEmpty,
+              let cornerRadius = info["corner"] as? CGFloat
+        else {
+            return nil
+        }
+        
+        return cornerRadius
+    }
+    
     /// 取得該裝置的內部編號 (實機才可以)
     /// - Returns: String
     func deviceIdentifier() -> String {
         return UIDevice._identifier()
     }
-
+    
     /// 依照裝置Id去解析DeviceType
     /// - Parameter identifier: String
     /// - Returns: DeviceTyp?
     func deviceType(identifier: String) -> DeviceType? {
         return DeviceType.find(with: identifier)
     }
-        
+    
     /// 依照裝置Id去找出Enum
     /// - Parameters:
     ///   - identifier: 裝置編號
@@ -98,6 +117,7 @@ public extension WWDetectDevice {
 }
 
 // MARK: - 小工具
+@MainActor
 private extension WWDetectDevice {
     
     /// 取得該單一裝置類型的資訊 (iPad / iPhone / AppleTV / AppleWatch)
