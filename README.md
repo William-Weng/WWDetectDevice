@@ -8,6 +8,8 @@
 [![Tag](https://img.shields.io/github/v/tag/William-Weng/WWDetectDevice)](https://github.com/William-Weng/WWDetectDevice/tags)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat)](LICENSE)
 
+https://github.com/user-attachments/assets/f4390531-20fb-4a3f-b207-d53fa3e0c755
+
 一個用來辨識 Apple 裝置型號、機型資訊與螢幕圓角半徑的工具套件。
 
 ## ✨ [功能特色](https://peterpanswift.github.io/iphone-bezels/)

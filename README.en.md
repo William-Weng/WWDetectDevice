@@ -8,6 +8,8 @@
 [![Tag](https://img.shields.io/github/v/tag/William-Weng/WWDetectDevice)](https://github.com/William-Weng/WWDetectDevice/tags)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat)](LICENSE)
 
+https://github.com/user-attachments/assets/f4390531-20fb-4a3f-b207-d53fa3e0c755
+
 A utility package for detecting Apple device models, system information, and screen corner radius.
 
 ## ✨ [Features](https://peterpanswift.github.io/iphone-bezels/)
