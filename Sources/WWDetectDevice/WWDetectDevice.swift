@@ -8,24 +8,34 @@
 import UIKit
 
 // MARK: - 檢測裝置類型
-public actor WWDetectDevice {
+public enum WWDetectDevice {}
+
+// MARK: - 公開屬性
+public extension WWDetectDevice {
     
-    public static let shared = WWDetectDevice()
+    /// 取得該裝置的內部編號 (實機才可以)
+    /// - Returns: String
+    static var deviceIdentifier: String {
+        UIDevice.identifier
+    }
     
-    private init() {}
+    /// 取得系統的相關資訊
+    /// - Returns: SystemInformation
+    static var deviceSystemInformation: SystemInformation {
+        UIDevice.systemInformation
+    }
 }
 
-// MARK: - 公開函式
-@MainActor
+// MARK: - 公開API
 public extension WWDetectDevice {
     
     /// 取得該裝置類型的全文件資料 (iPad / iPhone / AppleTV / AppleWatch)
     /// - Parameter type: DeviceType
     /// - Returns: Any?
-    func deviceModelObject(type: DeviceType) -> Any? {
+    static func deviceModelObject(type: DeviceType) -> Any? {
         
-        guard let jsonString = Bundle.module._readText(resource: type.resource()),
-              let jsonObject = jsonString._jsonObject()
+        guard let jsonString = Bundle.module.readText(resource: type.resource()),
+              let jsonObject = jsonString.jsonObject()
         else {
             return nil
         }
@@ -36,7 +46,7 @@ public extension WWDetectDevice {
     /// 取得該裝置類型的全文件字典 (iPad / iPhone / AppleTV / AppleWatch)
     /// - Parameter type: DeviceType
     /// - Returns: [String: Any]
-    func deviceModel(type: DeviceType) -> [String: Any] {
+    static func deviceModel(type: DeviceType) -> [String: Any] {
         
         guard let object = deviceModelObject(type: type),
               let dictionary = object as? [String: Any]
@@ -51,7 +61,7 @@ public extension WWDetectDevice {
     /// - Parameters:
     ///   - identifier: String
     /// - Returns: [String: Any]
-    func deviceInformation(identifier: String) -> [String: Any] {
+    static func deviceInformation(identifier: String) -> [String: Any] {
         
         guard let deviceType = deviceType(identifier: identifier) else { return [:] }
         
@@ -63,9 +73,8 @@ public extension WWDetectDevice {
     /// - Parameters:
     ///   - identifier: String
     /// - Returns: CGFloat?
-    func deviceCornerRadius(identifier: String) -> CGFloat? {
+    static func deviceCornerRadius(identifier: String) -> CGFloat? {
         
-        // let cornerRadius = UIScreen.main.value(forKey: "displayCornerRadius") as? CGFloat ?? 0.0
         let info = deviceInformation(identifier: identifier)
         
         guard !info.isEmpty,
@@ -76,24 +85,18 @@ public extension WWDetectDevice {
         
         return cornerRadius
     }
-    
-    /// 取得該裝置的內部編號 (實機才可以)
-    /// - Returns: String
-    func deviceIdentifier() -> String {
-        return UIDevice._identifier()
-    }
-    
+        
     /// 依照裝置Id去解析DeviceType
     /// - Parameter identifier: String
     /// - Returns: DeviceTyp?
-    func deviceType(identifier: String) -> DeviceType? {
+    static func deviceType(identifier: String) -> DeviceType? {
         return DeviceType.find(with: identifier)
     }
     
     /// 依照裝置Id去找出Enum
     /// - Parameters:
     ///   - identifier: 裝置編號
-    func deviceEnum(identifier: String) -> (any DeviceEnum)? {
+    static func deviceEnum(identifier: String) -> (any DeviceEnum)? {
         
         guard let deviceType = WWDetectDevice.DeviceType.find(with: identifier) else { return nil }
         
@@ -108,16 +111,9 @@ public extension WWDetectDevice {
         
         return deviceEnum
     }
-    
-    /// 取得系統的相關資訊
-    /// - Returns: SystemInformation
-    func deviceSystemInformation() -> SystemInformation {
-        return UIDevice._systemInformation()
-    }
 }
 
 // MARK: - 小工具
-@MainActor
 private extension WWDetectDevice {
     
     /// 取得該單一裝置類型的資訊 (iPad / iPhone / AppleTV / AppleWatch)
@@ -125,7 +121,7 @@ private extension WWDetectDevice {
     ///   - type: DeviceType
     ///   - identifier: String
     /// - Returns: [String: Any]
-    func deviceInformation(type: DeviceType, identifier: String) -> [String: Any] {
+    static func deviceInformation(type: DeviceType, identifier: String) -> [String: Any] {
         
         guard let model = Optional.some(deviceModel(type: type)),
               let info = model[identifier] as? [String: Any]

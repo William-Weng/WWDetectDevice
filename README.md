@@ -1,64 +1,78 @@
-# WWDetectDevice
-[![Swift-5.7](https://img.shields.io/badge/Swift-5.7-orange.svg?style=flat)](https://developer.apple.com/swift/) [![iOS-16.0](https://img.shields.io/badge/iOS-16.0-pink.svg?style=flat)](https://developer.apple.com/swift/) ![TAG](https://img.shields.io/github/v/tag/William-Weng/WWDetectDevice) [![Swift Package Manager-SUCCESS](https://img.shields.io/badge/Swift_Package_Manager-SUCCESS-blue.svg?style=flat)](https://developer.apple.com/swift/) [![LICENSE](https://img.shields.io/badge/LICENSE-MIT-yellow.svg?style=flat)](https://developer.apple.com/swift/)
+[English](./README.en.md) | [繁體中文](./README.md)
 
-### [Introduction - 簡介](https://swiftpackageindex.com/William-Weng)
-- [Detect the device name and other related information from the device number.](https://www.theiphonewiki.com/wiki/Models)
-- [由裝置編號檢測該裝置的名稱等相關資訊。](https://github.com/devicekit/DeviceKit/blob/master/Source/Device.generated.swift)
+# [WWDetectDevice](https://swiftpackageindex.com/William-Weng)
 
-https://github.com/user-attachments/assets/b445b8e9-6d01-4c0c-949a-dce7f18f61ea
+[![Swift-5.10](https://img.shields.io/badge/Swift-5.10-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![iOS-17.0](https://img.shields.io/badge/iOS-17.0-pink.svg?style=flat)](https://developer.apple.com/swift/)
+[![SPM](https://img.shields.io/badge/Swift_Package_Manager-SUCCESS-blue.svg?style=flat)](https://developer.apple.com/swift/)
+[![Tag](https://img.shields.io/github/v/tag/William-Weng/WWDetectDevice)](https://github.com/William-Weng/WWDetectDevice/tags)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat)](LICENSE)
 
-### [Installation with Swift Package Manager](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/使用-spm-安裝第三方套件-xcode-11-新功能-2c4ffcf85b4b)
+一個用來辨識 Apple 裝置型號、機型資訊與螢幕圓角半徑的工具套件。
 
-```bash
+## ✨ [功能特色](https://peterpanswift.github.io/iphone-bezels/)
+
+- 取得目前裝置的內部識別碼。
+- 取得系統相關資訊。
+- 讀取各平台裝置資料庫。
+- 依照 identifier 查詢裝置型號與資訊。
+- 取得裝置圓角半徑。
+- 支援 iPhone、iPad、Apple Watch、Apple TV。
+
+## 📘 簡介
+
+`WWDetectDevice` 透過內建的裝置資料與系統 API，幫助你快速取得目前裝置的型號、分類與相關屬性。
+適合用在 UI 適配、裝置判斷、圓角計算、顯示特殊機型行為等情境。
+
+## 📦 安裝方式
+
+### 🧰 Swift Package Manager
+
+```swift
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWDetectDevice.git", .upToNextMajor(from: "1.4.1"))
+    .package(url: "https://github.com/William-Weng/WWDetectDevice.git", from: "1.5.0")
 ]
 ```
 
-### Function - 可用函式
-|[函式](https://everymac.com/ultimate-mac-lookup/?search_keywords=iPhone16,1)|[功能](https://useyourloaf.com/blog/iphone-16-screen-sizes/)|
-|-|-|
-|deviceModelObject(type:)|取得該裝置類型的[全文件](https://github.com/kylebshr/ScreenCorners)資料 (iPad / iPhone / AppleTV / AppleWatch)|
-|deviceModel(type:)|取得該裝置類型的全文件字典 (iPad / iPhone / AppleTV / AppleWatch)|
-|deviceIdentifier()|取得該裝置的內部編號 (實機才可以)|
-|deviceInformation(identifier:)|取得該單一裝置類型的資訊|
-|deviceCornerRadius(identifier:)|取得該單一裝置圓角半徑|
-|deviceType(identifier:)|依照裝置Id去解析DeviceType|
-|deviceEnum(identifier:)|依照裝置Id去找出Enum|
-|deviceSystemInformation()|取得系統的相關資訊|
+## 🚀 使用方式
 
-### Example
 ```swift
-import UIKit
 import WWDetectDevice
 
-final class ViewController: UIViewController {
+let identifier = WWDetectDevice.deviceIdentifier
+let systemInfo = WWDetectDevice.deviceSystemInformation
+```
 
-    private typealias Info = (type: WWDetectDevice.DeviceType, identifier: String)
-    
-    private let identifiers: [String] = [
-        "AppleTV6,2",
-        "iPad5,4",
-        "Watch6,9",
-        WWDetectDevice.shared.deviceIdentifier(),
-    ]
-    
-    @IBAction func detectDevice(_ sender: UIButton) {
-        
-        guard let identifier = identifiers[safe: sender.tag],
-              let deviceEnum = WWDetectDevice.shared.deviceEnum(identifier: identifier),
-              let name = WWDetectDevice.shared.deviceInformation(identifier: identifier)["name"] as? String
-        else {
-            return
-        }
-        
-        sender.setTitle(name, for: .normal)
-        print(deviceEnum)
-    }
-    
-    @IBAction func detectOS(_ sender: UIButton) {
-        let os = "\(WWDetectDevice.shared.deviceSystemInformation().name) \(WWDetectDevice.shared.deviceSystemInformation().version)"
-        sender.setTitle(os, for: .normal)
-    }
+### 🛠 取得裝置資訊
+
+```swift
+let info = WWDetectDevice.deviceInformation(identifier: "iPhone15,2")
+print(info)
+```
+
+### 📐 取得圓角半徑
+
+```swift
+if let radius = WWDetectDevice.deviceCornerRadius(identifier: "iPhone15,2") {
+    print("corner radius:", radius)
 }
 ```
+
+## 📚 API 說明
+
+| 方法 | 說明 |
+| --- | --- |
+| `deviceIdentifier` | 取得該裝置的內部編號。 |
+| `deviceSystemInformation` | 取得系統的相關資訊。 |
+| `deviceModelObject(type:)` | 取得該裝置類型的完整資料物件。 |
+| `deviceModel(type:)` | 取得該裝置類型的完整字典資料。 |
+| `deviceInformation(identifier:)` | 依照 identifier 取得單一裝置資訊。 |
+| `deviceCornerRadius(identifier:)` | 依照 identifier 取得裝置圓角半徑。 |
+| `deviceType(identifier:)` | 依照 identifier 取得裝置類型。 |
+| `deviceEnum(identifier:)` | 依照 identifier 取得對應的裝置列舉。 |
+
+## ⚠️ 注意事項
+
+- `deviceIdentifier` 需在實機上才會有意義。
+- 某些 API 依賴內建資料檔案，請確認資源已正確加入 SPM target。
+- `deviceCornerRadius(identifier:)` 可能在找不到資料時回傳 `nil`。

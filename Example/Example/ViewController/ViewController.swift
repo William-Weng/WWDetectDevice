@@ -17,7 +17,7 @@ final class ViewController: UIViewController {
         "AppleTV6,2",
         "iPad5,4",
         "Watch6,9",
-        WWDetectDevice.shared.deviceIdentifier(),
+        WWDetectDevice.deviceIdentifier,
     ]
     
     /// 檢測裝置類型名稱
@@ -25,8 +25,8 @@ final class ViewController: UIViewController {
     @IBAction func detectDevice(_ sender: UIButton) {
         
         guard let identifier = identifiers[safe: sender.tag],
-              let deviceEnum = WWDetectDevice.shared.deviceEnum(identifier: identifier),
-              let name = WWDetectDevice.shared.deviceInformation(identifier: identifier)["name"] as? String
+              let deviceEnum = WWDetectDevice.deviceEnum(identifier: identifier),
+              let name = WWDetectDevice.deviceInformation(identifier: identifier)["name"] as? String
         else {
             return
         }
@@ -38,7 +38,7 @@ final class ViewController: UIViewController {
     /// 檢測裝置系統名稱
     /// - Parameter sender: UIButton
     @IBAction func detectOS(_ sender: UIButton) {
-        let os = "\(WWDetectDevice.shared.deviceSystemInformation().name) \(WWDetectDevice.shared.deviceSystemInformation().version)"
+        let os = "\(WWDetectDevice.deviceSystemInformation.name) \(WWDetectDevice.deviceSystemInformation.version)"
         sender.setTitle(os, for: .normal)
     }
 }

@@ -15,7 +15,7 @@ extension String {
     ///   - encoding: 字元編碼
     ///   - isLossyConversion: 失真轉換
     /// - Returns: Data?
-    func _data(using encoding: String.Encoding = .utf8, isLossyConversion: Bool = false) -> Data? {
+    func data(using encoding: String.Encoding = .utf8, isLossyConversion: Bool = false) -> Data? {
         let data = self.data(using: encoding, allowLossyConversion: isLossyConversion)
         return data
     }
@@ -25,9 +25,9 @@ extension String {
     ///   - encoding: 字元編碼
     ///   - options: JSON序列化讀取方式
     /// - Returns: Any?
-    func _jsonObject(encoding: String.Encoding = .utf8, options: JSONSerialization.ReadingOptions = .allowFragments) -> Any? {
+    func jsonObject(encoding: String.Encoding = .utf8, options: JSONSerialization.ReadingOptions = .allowFragments) -> Any? {
         
-        guard let data = self._data(using: encoding),
+        guard let data = self.data(using: encoding),
               let jsonObject = try? JSONSerialization.jsonObject(with: data, options: options)
         else {
             return nil
@@ -44,16 +44,16 @@ extension Bundle {
     /// - LiftCycle.jpeg => ./Documents/LiftCycle.jpeg
     /// - Parameter filename: 檔案名稱
     /// - Returns: URL?
-    func _fileUrl(with filename: String) -> URL? { return bundleURL.appendingPathComponent(filename) }
+    func fileUrl(with filename: String) -> URL? { return bundleURL.appendingPathComponent(filename) }
     
     /// Bundle File => String
     /// - Parameters:
     ///   - resource: 外部檔案 (scrpit.js)
     ///   - encoding: 字元編碼 (UTF8)
     /// - Returns: String?
-    func _readText(resource: String, encoding: String.Encoding = .utf8) -> String? {
+    func readText(resource: String, encoding: String.Encoding = .utf8) -> String? {
         
-        guard let fileUrl = self._fileUrl(with: "\(resource)"),
+        guard let fileUrl = self.fileUrl(with: "\(resource)"),
               let text = FileManager.default._readText(from: fileUrl, encoding: encoding)
         else {
             return nil
@@ -89,7 +89,7 @@ extension UIDevice {
     /// [取得iPhone的內部編號 - 實機](https://medium.com/彼得潘的-swift-ios-app-開發教室/get-current-iphone-device-model-取得手機型號資訊-5cee991ace1e)
     /// => iPhone14,5 (iPhone 13)
     /// - Returns: [String](https://www.theiphonewiki.com/wiki/Models)
-    static func _identifier() -> String {
+    static var identifier: String {
         
         var systemInfo = utsname()
         uname(&systemInfo)
@@ -105,7 +105,7 @@ extension UIDevice {
     
     /// [取得系統的相關資訊](https://mini.nidbox.com/diary/read/9759417) => (name: "iOS", version: "14.6", model: "iPhone", idiom: 0)
     /// - Returns: [WWDetectDevice.SystemInformation](https://mini.nidbox.com/diary/read/9759417)
-    static func _systemInformation() -> WWDetectDevice.SystemInformation {
+    static var systemInformation: WWDetectDevice.SystemInformation {
         let info: WWDetectDevice.SystemInformation = (name: UIDevice.current.systemName, version: UIDevice.current.systemVersion, model: UIDevice.current.model, idiom: UIDevice.current.userInterfaceIdiom)
         return info
     }
