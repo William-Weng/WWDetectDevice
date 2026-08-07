@@ -32,7 +32,7 @@ It’s useful for UI adaptation, device‑specific behavior, and accurate corner
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWDetectDevice.git", from: "1.5.0")
+    .package(url: "https://github.com/William-Weng/WWDetectDevice.git", from: "1.5.1")
 ]
 ```
 
@@ -62,17 +62,21 @@ if let radius = WWDetectDevice.deviceCornerRadius(identifier: "iPhone15,2") {
 
 ## 📚 API
 
-| Method                               | Description                                      |
-| ------------------------------------ | ------------------------------------------------ |
-| `deviceIdentifier`                   | Returns the current device identifier.          |
-| `deviceSystemInformation`           | Returns basic system information.               |
-| `deviceModelObject(type:)`          | Returns the full metadata object for a platform.|
-| `deviceModel(type:)`                | Returns the full metadata dictionary for a platform. |
-| `deviceInformation(identifier:)`    | Returns information for a single device by identifier. |
-| `deviceCornerRadius(identifier:)`   | Returns the screen corner radius for a device.  |
-| `deviceType(identifier:)`           | Returns the device type for an identifier.      |
-| `deviceEnum(identifier:)`           | Returns the matching device enum for an identifier. |
+| Method | Description |
+| --- | --- |
+| `deviceIdentifier` | Returns the current device identifier. |
+| `deviceSystemInformation` | Returns basic system information. |
+| `appInformation` | A static computed property that quickly retrieves information about the current application. |
+| `deviceModelObject(type:)` | Returns the full metadata object for a platform.|
+| `deviceModel(type:)` | Returns the full metadata dictionary for a platform. |
+| `deviceInformation(identifier:)` | Returns information for a single device by identifier. |
+| `deviceCornerRadius(identifier:)` | Returns the screen corner radius for a device. |
+| `deviceType(identifier:)` | Returns the device type for an identifier. |
+| `deviceEnum(identifier:)` | Returns the matching device enum for an identifier. |
+| `infoValue(by:forKey:)` | A static function that reads any type of configuration value from Info.plist using either a custom or predefined key type. |
 
 ## ⚠️ Notes
 
-- `deviceIdentifier` is only meaningful on a
+- `deviceIdentifier` is only meaningful when running on a physical device.
+- Certain APIs rely on bundled data files; please ensure resources are properly added to the SPM target.
+- `deviceCornerRadius(identifier:)` may return nil if the data cannot be found.

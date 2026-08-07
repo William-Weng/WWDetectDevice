@@ -11,7 +11,7 @@ import WWDetectDevice
 // MARK: - ViewController
 final class ViewController: UIViewController {
     
-    private typealias Info = (type: WWDetectDevice.DeviceType, identifier: String)
+    private typealias Info = (type: DeviceType, identifier: String)
     
     private let identifiers: [String] = [
         "AppleTV6,2",
@@ -40,5 +40,8 @@ final class ViewController: UIViewController {
     @IBAction func detectOS(_ sender: UIButton) {
         let os = "\(WWDetectDevice.deviceSystemInformation.name) \(WWDetectDevice.deviceSystemInformation.version)"
         sender.setTitle(os, for: .normal)
+        
+        
+        print(WWDetectDevice.appInformation)
     }
 }

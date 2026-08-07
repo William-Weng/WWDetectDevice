@@ -32,7 +32,7 @@ https://github.com/user-attachments/assets/f4390531-20fb-4a3f-b207-d53fa3e0c755
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWDetectDevice.git", from: "1.5.0")
+    .package(url: "https://github.com/William-Weng/WWDetectDevice.git", from: "1.5.1")
 ]
 ```
 
@@ -66,12 +66,14 @@ if let radius = WWDetectDevice.deviceCornerRadius(identifier: "iPhone15,2") {
 | --- | --- |
 | `deviceIdentifier` | 取得該裝置的內部編號。 |
 | `deviceSystemInformation` | 取得系統的相關資訊。 |
+| `appInformation` | 取得當前應用程式資訊的靜態計算屬性。 |
 | `deviceModelObject(type:)` | 取得該裝置類型的完整資料物件。 |
 | `deviceModel(type:)` | 取得該裝置類型的完整字典資料。 |
 | `deviceInformation(identifier:)` | 依照 identifier 取得單一裝置資訊。 |
 | `deviceCornerRadius(identifier:)` | 依照 identifier 取得裝置圓角半徑。 |
 | `deviceType(identifier:)` | 依照 identifier 取得裝置類型。 |
 | `deviceEnum(identifier:)` | 依照 identifier 取得對應的裝置列舉。 |
+| `infoValue(by:forKey:)` | 透過自訂或預設的 Key 類型，讀取 Info.plist 內任意型態設定值的靜態函式。 |
 
 ## ⚠️ 注意事項
 

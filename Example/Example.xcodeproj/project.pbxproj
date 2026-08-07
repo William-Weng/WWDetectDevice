@@ -33,7 +33,8 @@
 		81D2A4172F9236A2003BF366 /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81D2A4162F9236A2003BF366 /* WWDetectDevice */; };
 		81D2A41A2F923C49003BF366 /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81D2A4192F923C49003BF366 /* WWDetectDevice */; };
 		81DFCED930258B4400BD8D35 /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81DFCED830258B4400BD8D35 /* WWDetectDevice */; };
-		81DFCEDC30258C3F00BD8D35 /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81DFCEDB30258C3F00BD8D35 /* WWDetectDevice */; };
+		81DFCEDF30258C9800BD8D35 /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81DFCEDE30258C9800BD8D35 /* WWDetectDevice */; };
+		81DFCF7A3025AE1200BD8D35 /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81DFCF793025AE1200BD8D35 /* WWDetectDevice */; };
 		81E85C1E2D66DF8300721A9D /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81E85C1D2D66DF8300721A9D /* WWDetectDevice */; };
 		81E85C242D671F4500721A9D /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81E85C232D671F4500721A9D /* WWDetectDevice */; };
 		81E85C2A2D67210100721A9D /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81E85C292D67210100721A9D /* WWDetectDevice */; };
@@ -68,7 +69,7 @@
 				810DDAF92BEA2788004C3D88 /* WWDetectDevice in Frameworks */,
 				81E85C1E2D66DF8300721A9D /* WWDetectDevice in Frameworks */,
 				81DFCED930258B4400BD8D35 /* WWDetectDevice in Frameworks */,
-				81DFCEDC30258C3F00BD8D35 /* WWDetectDevice in Frameworks */,
+				81DFCEDF30258C9800BD8D35 /* WWDetectDevice in Frameworks */,
 				81E85C242D671F4500721A9D /* WWDetectDevice in Frameworks */,
 				81AA357E302585CE0032043D /* WWDetectDevice in Frameworks */,
 				810DDAED2BEA18B6004C3D88 /* WWDetectDevice in Frameworks */,
@@ -83,6 +84,7 @@
 				8169C2852D01A89D0006A64E /* WWDetectDevice in Frameworks */,
 				81D2A4172F9236A2003BF366 /* WWDetectDevice in Frameworks */,
 				81E934232E9C9740002579B2 /* WWDetectDevice in Frameworks */,
+				81DFCF7A3025AE1200BD8D35 /* WWDetectDevice in Frameworks */,
 				81AD6D642BEA12330018127A /* WWDetectDevice in Frameworks */,
 				81AD6D612BEA0E070018127A /* WWDetectDevice in Frameworks */,
 			);
@@ -204,7 +206,8 @@
 				81D2A4192F923C49003BF366 /* WWDetectDevice */,
 				81AA357D302585CE0032043D /* WWDetectDevice */,
 				81DFCED830258B4400BD8D35 /* WWDetectDevice */,
-				81DFCEDB30258C3F00BD8D35 /* WWDetectDevice */,
+				81DFCEDE30258C9800BD8D35 /* WWDetectDevice */,
+				81DFCF793025AE1200BD8D35 /* WWDetectDevice */,
 			);
 			productName = Example;
 			productReference = 3DBCD87026F198EF00522E3B /* Example.app */;
@@ -235,7 +238,7 @@
 			);
 			mainGroup = 3DBCD86726F198EF00522E3B;
 			packageReferences = (
-				81DFCEDA30258C3F00BD8D35 /* XCRemoteSwiftPackageReference "WWDetectDevice" */,
+				81DFCF783025AE1200BD8D35 /* XCRemoteSwiftPackageReference "WWDetectDevice" */,
 			);
 			productRefGroup = 3DBCD87126F198EF00522E3B /* Products */;
 			projectDirPath = "";
@@ -486,12 +489,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		81DFCEDA30258C3F00BD8D35 /* XCRemoteSwiftPackageReference "WWDetectDevice" */ = {
+		81DFCF783025AE1200BD8D35 /* XCRemoteSwiftPackageReference "WWDetectDevice" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/William-Weng/WWDetectDevice";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 1.5.0;
+				minimumVersion = 1.5.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -577,9 +580,13 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = WWDetectDevice;
 		};
-		81DFCEDB30258C3F00BD8D35 /* WWDetectDevice */ = {
+		81DFCEDE30258C9800BD8D35 /* WWDetectDevice */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 81DFCEDA30258C3F00BD8D35 /* XCRemoteSwiftPackageReference "WWDetectDevice" */;
+			productName = WWDetectDevice;
+		};
+		81DFCF793025AE1200BD8D35 /* WWDetectDevice */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81DFCF783025AE1200BD8D35 /* XCRemoteSwiftPackageReference "WWDetectDevice" */;
 			productName = WWDetectDevice;
 		};
 		81E85C1D2D66DF8300721A9D /* WWDetectDevice */ = {
