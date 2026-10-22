@@ -61,6 +61,10 @@ enum iPhoneType: DeviceEnum, CaseIterable {
     case iPhone_17_Pro_Max
     case iPhone_17
     case iPhone_Air
+    case iPhone_17e
+    case iPhone_18_Pro
+    case iPhone_18_Pro_Max
+    case iPhone_Duo
     
     /// 使用內建Id去取得該手機的名稱 ("iPhone14,5" => .iPhone_13)
     /// - Parameter identifier: String
@@ -129,6 +133,10 @@ enum iPhoneType: DeviceEnum, CaseIterable {
             "iPhone18,2": .iPhone_17_Pro_Max,
             "iPhone18,3": .iPhone_17,
             "iPhone18,4": .iPhone_Air,
+            "iPhone18,5": .iPhone_17e,
+            "iPhone19,2": .iPhone_18_Pro,
+            "iPhone19,3": .iPhone_18_Pro_Max,
+            "iPhone19,4": .iPhone_Duo
         ]
         
         return models[identifier]

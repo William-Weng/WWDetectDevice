@@ -59,5 +59,9 @@
   "iPhone18,1": { "name": "iPhone 17 Pro", "numbers": ["A3256", "A3522", "A3523", "A3524"], "storages": ["256GB", "512GB", "1T"], "camera": { "front": 1, "back": 3 }, "corner": 62.0 },
   "iPhone18,2": { "name": "iPhone 17 Pro Max", "numbers": ["A3257", "A3525", "A3526", "A3527"], "storages": ["256GB", "512GB", "1T", "2T"], "camera": { "front": 1, "back": 3 }, "corner": 62.0 },
   "iPhone18,3": { "name": "iPhone 17", "numbers": ["A3258", "A3519", "A3520", "A3521"], "storages": ["256GB", "512GB"], "camera": { "front": 1, "back": 2 }, "corner": 62.0 },
-  "iPhone18,4": { "name": "iPhone Air", "numbers": ["A3260", "A3516", "A3517", "A3518"], "storages": ["256GB", "512GB", "1T"], "camera": { "front": 1, "back": 1 }, "corner": 62.0 }
+  "iPhone18,4": { "name": "iPhone Air", "numbers": ["A3260", "A3516", "A3517", "A3518"], "storages": ["256GB", "512GB", "1T"], "camera": { "front": 1, "back": 1 }, "corner": 62.0 },
+  "iPhone18,5": { "name": "iPhone 17e", "numbers": ["A3575", "A3634", "A3635"], "storages": ["128GB", "256GB", "512GB"], "camera": { "front": 1, "back": 2 }, "corner": 62.0 },
+  "iPhone19,2": { "name": "iPhone 18 Pro", "numbers": ["A3472", "A3713", "A3714", "A3715"], "storages": ["256GB", "512GB", "1TB", "2TB"], "camera": { "front": 1, "back": 3 }, "corner": 63.5 },
+  "iPhone19,3": { "name": "iPhone 18 Pro Max", "numbers": ["A3473", "A3716", "A3717", "A3718"], "storages": ["256GB", "512GB", "1TB", "2TB"], "camera": { "front": 1, "back": 3 }, "corner": 63.5 },
+  "iPhone19,4": { "name": "iPhone Duo", "numbers": ["A3447", "A3719", "A3720", "A3721"], "storages": ["256GB", "512GB", "1TB"], "camera": { "front": 2, "back": 3 }, "corner": 58.0 }
 }

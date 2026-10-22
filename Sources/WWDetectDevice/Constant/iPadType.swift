@@ -48,9 +48,13 @@ enum iPadType: DeviceEnum, CaseIterable {
     case iPad_Air_13_inch_7th
     case iPad_11th
     case iPad_mini_7th
-    case iPad_Pro_11_inch_5rd
+    case iPad_Pro_11_inch_5th
     case iPad_Pro_13_inch_7th
-    
+    case iPad_Air_11_inch_M4
+    case iPad_Air_13_inch_M4
+    case iPad_Pro_11_inch_M5
+    case iPad_Pro_13_inch_M5
+
     /// 使用內建Id去取得該平板的名稱 ("iPad11,3" => .iPad_Air_3rd)
     /// - Parameter identifier: String
     /// - Returns: iPhoneType?
@@ -148,10 +152,19 @@ enum iPadType: DeviceEnum, CaseIterable {
             "iPad15,8": .iPad_11th,
             "iPad16,1": .iPad_mini_7th,
             "iPad16,2": .iPad_mini_7th,
-            "iPad16,3": .iPad_Pro_11_inch_5rd,
-            "iPad16,4": .iPad_Pro_11_inch_5rd,
+            "iPad16,3": .iPad_Pro_11_inch_5th,
+            "iPad16,4": .iPad_Pro_11_inch_5th,
             "iPad16,5": .iPad_Pro_13_inch_7th,
             "iPad16,6": .iPad_Pro_13_inch_7th,
+            "iPad16,7": .iPad_11th,
+            "iPad16,8": .iPad_Air_11_inch_M4,
+            "iPad16,9": .iPad_Air_11_inch_M4,
+            "iPad16,10": .iPad_Air_13_inch_M4,
+            "iPad16,11": .iPad_Air_13_inch_M4,
+            "iPad17,1": .iPad_Pro_11_inch_M5,
+            "iPad17,2": .iPad_Pro_11_inch_M5,
+            "iPad17,3": .iPad_Pro_13_inch_M5,
+            "iPad17,4": .iPad_Pro_13_inch_M5,
         ]
         
         return models[identifier]

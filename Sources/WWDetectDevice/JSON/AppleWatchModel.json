@@ -46,5 +46,19 @@
   "Watch7,8": { "name": "Apple Watch Series 10", "numbers": ["A2997"], "sizes": ["42mm"] },
   "Watch7,9": { "name": "Apple Watch Series 10", "numbers": ["A2999"], "sizes": ["46mm"] },
   "Watch7,10": { "name": "Apple Watch Series 10", "numbers": ["A3001", "A3002"], "sizes": ["42mm"] },
-  "Watch7,11": { "name": "Apple Watch Series 10", "numbers": ["A3003", "A3206"], "sizes": ["46mm"] }
+  "Watch7,11": { "name": "Apple Watch Series 10", "numbers": ["A3003", "A3206"], "sizes": ["46mm"] },
+  "Watch7,12": { "name": "Apple Watch Ultra 3", "numbers": ["A3281", "A3282"], "sizes": ["49mm"] },
+  "Watch7,13": { "name": "Apple Watch SE (3rd generation)", "numbers": ["A3324"], "sizes": ["40mm"] },
+  "Watch7,14": { "name": "Apple Watch SE (3rd generation)", "numbers": ["A3391"], "sizes": ["44mm"] },
+  "Watch7,15": { "name": "Apple Watch SE (3rd generation)", "numbers": ["A3325"], "sizes": ["40mm"] },
+  "Watch7,16": { "name": "Apple Watch SE (3rd generation)", "numbers": ["A3392"], "sizes": ["44mm"] },
+  "Watch7,17": { "name": "Apple Watch Series 11", "numbers": ["A3331"], "sizes": ["42mm"] },
+  "Watch7,18": { "name": "Apple Watch Series 11", "numbers": ["A3333", "A3451"], "sizes": ["46mm"] },
+  "Watch7,19": { "name": "Apple Watch Series 11", "numbers": ["A3335"], "sizes": ["42mm"] },
+  "Watch7,20": { "name": "Apple Watch Series 11", "numbers": ["A3337", "A3453"], "sizes": ["46mm"] },
+  "Watch8,1":  { "name": "Apple Watch Ultra 4", "numbers": ["A3579", "A3580"], "sizes": ["49mm"] },
+  "Watch8,2":  { "name": "Apple Watch Series 12", "numbers": ["A3581"], "sizes": ["42mm"] },
+  "Watch8,3":  { "name": "Apple Watch Series 12", "numbers": ["A3583", "A3584"], "sizes": ["46mm"] },
+  "Watch8,4":  { "name": "Apple Watch Series 12", "numbers": ["A3585"], "sizes": ["42mm"] },
+  "Watch8,5":  { "name": "Apple Watch Series 12", "numbers": ["A3587"], "sizes": ["46mm"] }
 }

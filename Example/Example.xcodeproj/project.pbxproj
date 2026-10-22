@@ -26,6 +26,8 @@
 		81818F5C2D0193690064EBE1 /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81818F5B2D0193690064EBE1 /* WWDetectDevice */; };
 		81A6826F2D002143003B0801 /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81A6826E2D002143003B0801 /* WWDetectDevice */; };
 		81A682752D002784003B0801 /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81A682742D002784003B0801 /* WWDetectDevice */; };
+		81A99413308A052100018BCD /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81A99412308A052100018BCD /* WWDetectDevice */; };
+		81A99416308A090800018BCD /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81A99415308A090800018BCD /* WWDetectDevice */; };
 		81AA357E302585CE0032043D /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81AA357D302585CE0032043D /* WWDetectDevice */; };
 		81AD6D612BEA0E070018127A /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81AD6D602BEA0E070018127A /* WWDetectDevice */; };
 		81AD6D642BEA12330018127A /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81AD6D632BEA12330018127A /* WWDetectDevice */; };
@@ -34,7 +36,6 @@
 		81D2A41A2F923C49003BF366 /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81D2A4192F923C49003BF366 /* WWDetectDevice */; };
 		81DFCED930258B4400BD8D35 /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81DFCED830258B4400BD8D35 /* WWDetectDevice */; };
 		81DFCEDF30258C9800BD8D35 /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81DFCEDE30258C9800BD8D35 /* WWDetectDevice */; };
-		81DFCF7A3025AE1200BD8D35 /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81DFCF793025AE1200BD8D35 /* WWDetectDevice */; };
 		81E85C1E2D66DF8300721A9D /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81E85C1D2D66DF8300721A9D /* WWDetectDevice */; };
 		81E85C242D671F4500721A9D /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81E85C232D671F4500721A9D /* WWDetectDevice */; };
 		81E85C2A2D67210100721A9D /* WWDetectDevice in Frameworks */ = {isa = PBXBuildFile; productRef = 81E85C292D67210100721A9D /* WWDetectDevice */; };
@@ -84,8 +85,9 @@
 				8169C2852D01A89D0006A64E /* WWDetectDevice in Frameworks */,
 				81D2A4172F9236A2003BF366 /* WWDetectDevice in Frameworks */,
 				81E934232E9C9740002579B2 /* WWDetectDevice in Frameworks */,
-				81DFCF7A3025AE1200BD8D35 /* WWDetectDevice in Frameworks */,
+				81A99413308A052100018BCD /* WWDetectDevice in Frameworks */,
 				81AD6D642BEA12330018127A /* WWDetectDevice in Frameworks */,
+				81A99416308A090800018BCD /* WWDetectDevice in Frameworks */,
 				81AD6D612BEA0E070018127A /* WWDetectDevice in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,7 +209,8 @@
 				81AA357D302585CE0032043D /* WWDetectDevice */,
 				81DFCED830258B4400BD8D35 /* WWDetectDevice */,
 				81DFCEDE30258C9800BD8D35 /* WWDetectDevice */,
-				81DFCF793025AE1200BD8D35 /* WWDetectDevice */,
+				81A99412308A052100018BCD /* WWDetectDevice */,
+				81A99415308A090800018BCD /* WWDetectDevice */,
 			);
 			productName = Example;
 			productReference = 3DBCD87026F198EF00522E3B /* Example.app */;
@@ -221,7 +224,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 2710;
 				TargetAttributes = {
 					3DBCD86F26F198EF00522E3B = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -238,7 +241,7 @@
 			);
 			mainGroup = 3DBCD86726F198EF00522E3B;
 			packageReferences = (
-				81DFCF783025AE1200BD8D35 /* XCRemoteSwiftPackageReference "WWDetectDevice" */,
+				81A99414308A090800018BCD /* XCRemoteSwiftPackageReference "WWDetectDevice" */,
 			);
 			productRefGroup = 3DBCD87126F198EF00522E3B /* Products */;
 			projectDirPath = "";
@@ -299,6 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -330,6 +334,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4Q5CYDAG3B;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -352,6 +357,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -361,6 +367,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -392,6 +399,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4Q5CYDAG3B;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -407,6 +415,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -420,7 +429,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 20260807;
-				DEVELOPMENT_TEAM = 4Q5CYDAG3B;
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -446,7 +454,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 20260807;
-				DEVELOPMENT_TEAM = 4Q5CYDAG3B;
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -489,12 +496,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		81DFCF783025AE1200BD8D35 /* XCRemoteSwiftPackageReference "WWDetectDevice" */ = {
+		81A99414308A090800018BCD /* XCRemoteSwiftPackageReference "WWDetectDevice" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/William-Weng/WWDetectDevice";
+			repositoryURL = "https://github.com/William-Weng/WWDetectDevice/";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 1.5.1;
+				minimumVersion = 1.5.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -552,6 +559,15 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = WWDetectDevice;
 		};
+		81A99412308A052100018BCD /* WWDetectDevice */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WWDetectDevice;
+		};
+		81A99415308A090800018BCD /* WWDetectDevice */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81A99414308A090800018BCD /* XCRemoteSwiftPackageReference "WWDetectDevice" */;
+			productName = WWDetectDevice;
+		};
 		81AA357D302585CE0032043D /* WWDetectDevice */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WWDetectDevice;
@@ -582,11 +598,6 @@
 		};
 		81DFCEDE30258C9800BD8D35 /* WWDetectDevice */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = WWDetectDevice;
-		};
-		81DFCF793025AE1200BD8D35 /* WWDetectDevice */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 81DFCF783025AE1200BD8D35 /* XCRemoteSwiftPackageReference "WWDetectDevice" */;
 			productName = WWDetectDevice;
 		};
 		81E85C1D2D66DF8300721A9D /* WWDetectDevice */ = {

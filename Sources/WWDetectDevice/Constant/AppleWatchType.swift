@@ -25,7 +25,12 @@ enum AppleWatchType: DeviceEnum, CaseIterable {
     case Apple_Watch_Series_9
     case Apple_Watch_Ultra_2
     case Apple_Watch_Series_10
-    
+    case Apple_Watch_Ultra_3
+    case Apple_Watch_SE_3rd
+    case Apple_Watch_Series_11
+    case Apple_Watch_Ultra_4
+    case Apple_Watch_Series_12
+
     /// 使用內建Id去取得該AppleWatch的名稱 ("Watch6,9" => .Apple_Watch_Series_7)
     /// - Parameter identifier: String
     /// - Returns: iPhoneType?
@@ -80,6 +85,20 @@ enum AppleWatchType: DeviceEnum, CaseIterable {
             "Watch7,9": .Apple_Watch_Series_10,
             "Watch7,10": .Apple_Watch_Series_10,
             "Watch7,11": .Apple_Watch_Series_10,
+            "Watch7,12": .Apple_Watch_Ultra_3,
+            "Watch7,13": .Apple_Watch_SE_3rd,
+            "Watch7,14": .Apple_Watch_SE_3rd,
+            "Watch7,15": .Apple_Watch_SE_3rd,
+            "Watch7,16": .Apple_Watch_SE_3rd,
+            "Watch7,17": .Apple_Watch_Series_11,
+            "Watch7,18": .Apple_Watch_Series_11,
+            "Watch7,19": .Apple_Watch_Series_11,
+            "Watch7,20": .Apple_Watch_Series_11,
+            "Watch8,1": .Apple_Watch_Ultra_4,
+            "Watch8,2": .Apple_Watch_Series_12,
+            "Watch8,3": .Apple_Watch_Series_12,
+            "Watch8,4": .Apple_Watch_Series_12,
+            "Watch8,5": .Apple_Watch_Series_12,
         ]
         
         return models[identifier]
